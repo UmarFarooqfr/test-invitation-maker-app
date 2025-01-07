@@ -13,7 +13,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideHttpClient(),
-    provideIonicAngular(),
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
