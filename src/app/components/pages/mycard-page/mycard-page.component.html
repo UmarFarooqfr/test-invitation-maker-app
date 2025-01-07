@@ -1,0 +1,31 @@
+<div class="main-container">
+  <ion-header [translucent]="true" mode="ios">
+    <ion-toolbar>
+      <ion-title>{{ "myCards" | translate }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="w-100 d-flex align-items-center justify-content-center mt-4">
+    <div class="work-toggle">
+      <div
+        class="tag"
+        [class.active]="selectedTag === 'Draft'"
+        (click)="selectedTag = 'Draft'"
+      >
+        {{ "draft" | translate }}
+      </div>
+      <div
+        class="tag"
+        [class.active]="selectedTag === 'Save'"
+        (click)="selectedTag = 'Save'"
+      >
+        {{ "save" | translate }}
+      </div>
+    </div>
+  </div>
+  <div
+    class="h-100 overflow-auto d-flex align-items-center justify-content-center mt-3"
+  >
+    {{ (selectedTag === 'Draft' ? "noDraftFound" : "noSaveFound" )| translate }}
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,95 @@
+<div class="main-container">
+  <div class="banner">
+    <i class="bi bi-x fs-2 close-btn" routerLink="/app/settings"></i>
+  </div>
+  <div class="content-section">
+    <div class="d-flex align-items-center">
+      <h1 class="mt-0 mb-0">{{ "invitationStudio" | translate }}</h1>
+      <div class="tag">Pro</div>
+    </div>
+    <p>{{ "unlockPremiumFeatures" | translate }}</p>
+    <table class="subscription-table">
+      <thead>
+        <tr>
+          <th>{{ "features" | translate }}</th>
+          <th>{{ "free" | translate }}</th>
+          <th class="pro-header">Pro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ "accessProTemplate" | translate }}</td>
+          <td><i class="bi bi-x-circle"></i></td>
+          <td><i class="bi bi-check-circle-fill"></i></td>
+        </tr>
+        <tr>
+          <td>{{ "removeWatermark" | translate }}</td>
+          <td><i class="bi bi-x-circle"></i></td>
+          <td><i class="bi bi-check-circle-fill"></i></td>
+        </tr>
+        <tr>
+          <td>{{ "removeAds" | translate }}</td>
+          <td><i class="bi bi-x-circle"></i></td>
+          <td><i class="bi bi-check-circle-fill"></i></td>
+        </tr>
+        <tr>
+          <td>{{ "unlimitedBackgrounds" | translate }}</td>
+          <td><i class="bi bi-x-circle"></i></td>
+          <td><i class="bi bi-check-circle-fill"></i></td>
+        </tr>
+        <tr>
+          <td>{{ "customDimensions" | translate }}</td>
+          <td><i class="bi bi-x-circle"></i></td>
+          <td><i class="bi bi-check-circle-fill"></i></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="subscription-cards">
+      <div
+        class="weekly-subscription"
+        (click)="selectSubscription('weekly')"
+        [class.active-subscription]="currentSubscription === 'weekly'"
+      >
+        <b>Rs 410.00</b>
+        <p>{{ "weekly" | translate }}</p>
+        <div class="divider"></div>
+        <span class="mt-2"> $1.49/{{ 'week' | translate}}</span>
+      </div>
+      <div
+        class="monthly-subscription"
+        (click)="selectSubscription('monthly')"
+        [class.active-subscription]="currentSubscription === 'monthly'"
+      >
+        <div class="off-header">Save 50%</div>
+        <b class="mt-3">Rs 820.00</b>
+        <p>{{ "monthly" | translate }}</p>
+        <div class="divider"></div>
+        <span class="mt-2"> $0.74/{{ 'week' | translate}}</span>
+      </div>
+      <div
+        class="yearly-subscription"
+        (click)="selectSubscription('yearly')"
+        [class.active-subscription]="currentSubscription === 'yearly'"
+      >
+        <div class="off-header">Save 70%</div>
+        <b class="mt-3">Rs 4,450.00</b>
+        <p>{{ "yearly" | translate }}</p>
+        <div class="divider"></div>
+        <span class="mt-2"> $0.33/{{ 'week' | translate}}</span>
+      </div>
+    </div>
+    <div class="btn-container">
+      <button>
+        <b> Start free trial </b>
+        <span> 3 days free trial than Rs 820.00/month </span>
+      </button>
+    </div>
+    <div class="privacy-container mt-3">
+      <p>
+        You will be automatically charged at the end of your free trial. Your
+        subscription will auto-renew, but you can cancel at any time.
+      </p>
+      <p class="privacy">Privacy | Detail</p>
+    </div>
+  </div>
+</div>

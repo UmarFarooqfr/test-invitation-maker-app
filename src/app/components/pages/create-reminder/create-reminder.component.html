@@ -1,0 +1,74 @@
+<ion-header [translucent]="true" mode="ios">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/app/settings"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ "setReminder" | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="main-container">
+  <form [formGroup]="reminderForm" (ngSubmit)="setReminder()">
+    <div class="input mt-5">
+      <label class="required" for="reminder-title">{{
+        "reminderTitle" | translate
+      }}</label>
+      <input
+        id="reminder-title"
+        type="text"
+        formControlName="reminderTitle"
+        placeholder="Enter title"
+      />
+      @if (reminderForm.get('reminderTitle')?.invalid &&
+      reminderForm.get('reminderTitle')?.touched) {
+      <div class="text-danger">
+        @if (reminderForm.get('reminderTitle')?.hasError('required')) {
+        <small>{{"reminderTitleValidation" | translate}}</small>
+        }
+      </div>
+      }
+    </div>
+
+    <div
+      class="d-flex align-items-center justify-content-between gap-3 mt-3"
+      style="width: 90%"
+    >
+      <div class="input">
+        <label class="required" for="reminder-date">{{
+          "reminderDate" | translate
+        }}</label>
+        <input id="reminder-date" type="date" formControlName="reminderDate" />
+        @if (reminderForm.get('reminderDate')?.invalid &&
+        reminderForm.get('reminderDate')?.touched) {
+        <div class="text-danger">
+          @if (reminderForm.get('reminderDate')?.hasError('required')) {
+          <small>{{ "reminderDateValidation" | translate }}</small>
+          }
+        </div>
+        }
+      </div>
+
+      <div class="input">
+        <label class="required" for="reminder-time">{{
+          "reminderTime" | translate
+        }}</label>
+        <input id="reminder-time" type="time" formControlName="reminderTime" />
+        @if (reminderForm.get('reminderTime')?.invalid &&
+        reminderForm.get('reminderTime')?.touched) {
+        <div class="text-danger">
+          @if (reminderForm.get('reminderTime')?.hasError('required')) {
+          <small>{{ "reminderTimeValidation" | translate }}</small>
+          }
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="button-group mt-5">
+      <ion-button type="submit" mode="md">
+        {{ "setReminder" | translate }}
+      </ion-button>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>

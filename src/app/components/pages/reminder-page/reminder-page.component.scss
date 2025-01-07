@@ -1,0 +1,39 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 160px);
+  background-color: #f5f5f5;
+  animation: fadeInContainer 0.3s ease-out forwards;
+}
+.reminder-item {
+  width: 90%;
+  background: #fff9f9;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid var(--btn-color);
+  transition: transform 0.2s ease-in-out,
+  box-shadow 0.2s ease-in-out;
+}
+
+.reminder-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.reminder-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+i {
+  color: var(--btn-color);
+}
+
+.text-muted {
+  font-size: 0.9rem;
+  color: #888;
+}

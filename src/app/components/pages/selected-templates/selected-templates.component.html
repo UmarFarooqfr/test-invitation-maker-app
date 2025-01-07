@@ -1,0 +1,15 @@
+<div class="main-container">
+  <ion-header [translucent]="true" mode="ios">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/home"></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{ selectedType }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="inner-container">
+    @for (item of templates; track $index) {
+    <img [src]="item.imageUrl" />
+    }
+  </div>
+</div>

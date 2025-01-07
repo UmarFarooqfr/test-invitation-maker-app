@@ -1,0 +1,44 @@
+<div class="main-container">
+  <ion-header [translucent]="true" mode="ios">
+    <ion-toolbar>
+      <ion-title>{{ "searchTemplates" | translate }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="w-100 d-flex align-items-center justify-content-center mt-2">
+    <ion-searchbar
+      mode="ios"
+      [(ngModel)]="searchQuery"
+      (ionInput)="onSearch($event)"
+      (ionFocus)="toggleDropdown(true)"
+      (ionBlur)="toggleDropdown(false)"
+      [placeholder]="'searchTemplates' | translate"
+      showClearButton="never"
+    ></ion-searchbar>
+    @if (filteredItems.length && isDropdownOpen ) {
+    <ion-list class="dropdown">
+      @for (item of filteredItems; track $index) {
+      <ion-item (click)="selectItem(item)">
+        <span [innerHTML]="highlightMatch(item)"></span>
+      </ion-item>
+      }
+    </ion-list>
+    }
+  </div>
+  @if (!selectedItem) {
+
+  <div
+    class="h-100 overflow-auto d-flex align-items-center justify-content-center mt-3"
+  >
+    {{ "noDataFound" | translate }}
+  </div>
+  } @else {
+  <div class="h-100 overflow-auto d-flex mt-3 mb-1">
+    <div class="image-container">
+      @for (item of searchedTemplates; track $index) {
+      <img [src]="item.imageUrl" class="image" />
+      }
+    </div>
+  </div>
+  }
+</div>
+<app-footer></app-footer>

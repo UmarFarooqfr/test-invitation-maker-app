@@ -1,0 +1,34 @@
+<div class="main-container">
+  <ion-header [translucent]="true" mode="ios">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/app/home"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Select Ratio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="inner-container">
+    <div class="column">
+    @for (item of ratioOptions; track $index) {
+      @if ($index < 5) {
+          <span [style.height]="item.height">
+            <i [class]=item.icon [style.color]="item.color"></i>
+            {{ item.title }}
+            {{ item.ratio + "px" }}
+          </span>
+        }
+      }
+    </div>
+      <div class="column">
+      @for (item of ratioOptions; track $index) {
+        @if ($index > 4) {
+            <span [style.height]="item.height">
+              <i [class]=item.icon [style.color]="item.color"></i>
+              {{ item.title }}
+              {{ item.ratio + "px" }}
+            </span>
+          }
+        }
+      </div> 
+  </div>
+</div>

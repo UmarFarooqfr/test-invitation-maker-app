@@ -1,0 +1,50 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: var(--primary);
+  overflow: auto;
+}
+.dropdown {
+  position: absolute;
+  background-color: #fff;
+  width: 93%;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  z-index: 10;
+  top: 131px;
+  border-radius: 10px;
+}
+
+.dropdown ion-item {
+  cursor: pointer;
+}
+ion-item::part(native) {
+  padding-left: 0px;
+}
+ion-item {
+  span {
+    margin-left: 10px;
+  }
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: space-between;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeInContainer 0.5s ease-out forwards;
+}
+.image {
+  height: 280px;
+  width: 47%;
+  border-radius: 10px;
+}
+

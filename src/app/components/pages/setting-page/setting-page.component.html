@@ -1,0 +1,80 @@
+<div class="main-container">
+  <ion-header [translucent]="true" mode="ios">
+    <ion-toolbar>
+      <ion-title>{{ "settings" | translate }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="h-100 overflow-auto">
+    <div class="w-100 d-flex align-items-center justify-content-between poster">
+      <div class="poster-text">
+        <h3 class="mt-0 mb-0">{{ "upgradeToPro" | translate }}</h3>
+        <p class="mb-0">{{ "unlockFetaureCreativity" | translate }}</p>
+        <button routerLink="/app/pro-page">
+          {{ "upgradeToPro" | translate }}
+        </button>
+      </div>
+      <span class="poster-img">
+        <img src="../../../../assets/images/premium-card.png" alt="" />
+      </span>
+    </div>
+    <ion-list mode="ios">
+      <ion-item class="lit-item no-icon" class="lit-item no-icon" button detail>
+        <i class="bi bi-house-door fs-3" slot="start"></i>
+        <ion-label>{{ "removeWatermark" | translate }}</ion-label>
+        <ion-toggle mode="ios" slot="end"></ion-toggle>
+      </ion-item>
+      <ion-item class="lit-item no-icon" button detail>
+        <i class="bi bi-translate fs-3" slot="start"></i>
+        <ion-label>{{ "languagePreferences" | translate }}</ion-label>
+        @if (currentLanguage === 'en') {
+        <img
+          src="../../../../assets/images/united-kingdom.png"
+          height="25"
+          width="25"
+          (click)="switchLanguage('es')"
+        />
+        } @else if (currentLanguage === 'es') {
+        <img
+          src="../../../../assets/images/spain.png"
+          height="25"
+          width="25"
+          (click)="switchLanguage('en')"
+        />
+        }
+      </ion-item>
+      <ion-item class="lit-item" button detail routerLink="/app/add-reminder">
+        <i class="bi bi-plus-circle fs-3" slot="start"></i>
+        <ion-label>{{ "addReminder" | translate }}</ion-label>
+      </ion-item>
+      <ion-item class="lit-item" button detail routerLink="/app/reminders">
+        <i class="bi bi-bell fs-3" slot="start"></i>
+        <ion-label>{{ "reminders" | translate }}</ion-label>
+      </ion-item>
+      <ion-item class="lit-item" button detail>
+        <i class="bi bi-person fs-3" slot="start"></i>
+        <ion-label>{{ "rateUs" | translate }}</ion-label>
+      </ion-item>
+      <ion-item class="lit-item" button detail>
+        <i class="bi bi-share fs-3" slot="start"></i>
+        <ion-label>{{ "shareApp" | translate }}</ion-label>
+      </ion-item>
+      <ion-item class="lit-item" button detail>
+        <i class="bi bi-app fs-3" slot="start"></i>
+        <ion-label>{{ "moreApp" | translate }}</ion-label>
+      </ion-item>
+      <ion-item class="lit-item" button detail>
+        <i class="bi bi-shield-lock fs-3" slot="start"></i>
+        <ion-label>{{ "privacyPolicy" | translate }}</ion-label>
+      </ion-item>
+      <ion-item class="lit-item" button detail>
+        <i class="bi bi-envelope fs-3" slot="start"></i>
+        <ion-label>{{ "contactUs" | translate }}</ion-label>
+      </ion-item>
+      <ion-item class="lit-item" button detail>
+        <i class="bi bi-trash fs-3" slot="start"></i>
+        <ion-label>{{ "clearData" | translate }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</div>
+<app-footer></app-footer>
